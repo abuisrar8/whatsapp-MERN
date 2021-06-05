@@ -10,12 +10,12 @@ function Sidebar() {
         <div className="sidebar">
 
             
-            <div className ="sidebar__headder">
-                <div className="">
-                    <Avatar src="" />
+            <div className ="sidebar__header">
+                
+                <Avatar src= "https://avatars.githubusercontent.com/u/51960220?v=4" />
 
-                </div>
-                <div className ="sidebar__headderRight">
+                
+                <div className ="sidebar__headerRight">
                     <IconButton><DonutLargeIcon/></IconButton>
                     <IconButton><ChatIcon/></IconButton>
                     <IconButton><MoreVertIcon/></IconButton>
