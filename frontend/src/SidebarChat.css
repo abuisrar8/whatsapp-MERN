@@ -1,22 +1,27 @@
 .sidebarChat{
     display: flex;
     padding: 20px;
-    border-bottom: 1px solid #f6f6f6;
+    border-bottom: 1px solid #1739b2;
     cursor: pointer;
     transition: none;
     transition: 100ms;
     margin-right: 10px;
     margin-bottom: 5px;
-    background-color: whitesmoke;
+    background-color: rgba(245, 245, 245, 0.486);
+    backdrop-filter: blur(1px);
     border-radius: 10px;
+    color: rgb(0, 0, 0);
+    
 }
 .sidebarChat:hover{
-    background-color: rgb(192, 192, 192);
+    background-color: rgba(160, 161, 173, 0.694);
+    backdrop-filter: blur(2px);
+    color: honeydew;
     transition: none;
 }
 .sidebarChat:active{
     
-    background-color: gray;
+    background-color: rgba(0, 101, 243, 0.465);
     
 }
 .sidebarChat__info > h2{

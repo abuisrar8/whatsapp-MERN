@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     flex: .35;
+    background-image: url("https://content.instructables.com/ORIG/FTT/ESPJ/HZN0SPK5/FTTESPJHZN0SPK5.jpg?auto=webp&frame=1&fit=bounds&md=67ad71214a48ecff1df7767294ae74a4");
     
 
 }
@@ -10,6 +11,8 @@
     justify-content: space-between;
     padding: 20px;
     border-right: 1px solid lightgrey;
+    backdrop-filter: blur(1px);
+    box-shadow: 0 1px 2px 0 rgb(81, 13, 217);
     
 }
 .sidebar__headerRight{
@@ -27,12 +30,13 @@
 
 }
 .sidebar__headerRight > .MuiIconButton-root{
-    color: rgb(42, 127, 188);
+    color: rgb(60, 60, 60);
+    background-color: rgba(128, 128, 128, 0.625);
 }
 .sidebar__search{
     display:flex;
     align-items: center;
-    background-color: rgb(42, 127, 188);
+    
     height: 39px;
     padding: 10px;
 
@@ -57,9 +61,9 @@
 }
 .sidebar__chats{
     flex: 1;
-    background-color: white;
+    
     overflow: scroll;
-    background-color: rgb(42, 127, 188);
+    
 
 }
 ::-webkit-scrollbar{
