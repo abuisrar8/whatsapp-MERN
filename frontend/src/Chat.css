@@ -67,7 +67,7 @@
     font-weight: 800;
     width: fit-content;
 }
-.chat__reciever{
+.chat__receiver{
     margin-left: auto;
     backdrop-filter: blur(2px);
     background-color: #1438278c;

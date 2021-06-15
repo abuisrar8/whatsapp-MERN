@@ -1,12 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Chat.css'
 import {Avatar} from '@material-ui/core'
 import IconButton from '@material-ui/core/IconButton';
 import {SearchOutlined , AttachFile, InsertEmoticon  } from '@material-ui/icons';
 import MoreVertIcon from '@material-ui/icons/MoreVert'
 import MicIcon from '@material-ui/icons/Mic'
+import axios from "./axios"
 
-function Chat() {
+
+
+function Chat( {messages}) {
+
+    const [input, setinput] = useState([])
+
+    const sendMessage = async (e)=>{
+        e.preventDefault();
+        await axios.post('/messages/new',{
+            message: input,
+            name:"demo",
+            timestamp:"justnow",
+            received:false,
+        })
+       setinput("") 
+    }
+
+
+
     return (
         <div className="chat" >
 
@@ -28,24 +47,22 @@ function Chat() {
             </div>
 
             <div className="chat__body">
+                {messages.map((message)=>(
 
-                <p className="chat__message">  
-                    <span className="chat__name">Israr
+                    <p className={`chat__message ${message.received && "chat__receiver"}`}>  
+                    <span className="chat__name">{message.name}
                     <span className="chat__timestamp">
-                        {new Date().toLocaleString()}
+                        {message.timestamp} 
                     </span></span>
-                    This is messsage                
-                    
+                    {message.message}               
+
                     </p>
 
-                    <p className="chat__message chat__reciever">  
-                    <span className="chat__name">Israr
-                    <span className="chat__timestamp">
-                        {new Date().toLocaleString()}
-                    </span></span>
-                    This is messsage                
                     
-                    </p>
+
+                ))}
+               
+                
 
                     
 
@@ -55,10 +72,12 @@ function Chat() {
                 <InsertEmoticon/>
                 <form>
                     <input 
+                    value={input}
+                    onChange ={ (e)=> setinput(e.target.value)}
                     placeholder="Type a message"
                     type="text" />
                     <button 
-                    
+                    onClick={sendMessage}
                     type="submit"></button>
                 </form>
                 <MicIcon/>
